@@ -1,0 +1,20 @@
+package com.dsa;
+
+public class CheckAlphabet {
+
+	public static void main(String[] args) {
+		
+		char c = 'z';
+		
+		if(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'z')
+		{
+				System.out.println("It is Alphabet :"+c);
+		}
+		else
+		{
+			System.out.println("it is not a Alphabet : "+c);
+		}
+
+	}
+
+}
