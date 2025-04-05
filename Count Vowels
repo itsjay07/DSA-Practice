@@ -1,0 +1,42 @@
+package com.jay;
+
+import java.util.Scanner;
+
+public class CountVowels {
+	
+	void vowels(String str)
+	{
+		int count = 0;
+		
+		for(int i = 0 ; i < str.length(); i++)		
+		{
+			char ch = str.charAt(i);
+			
+			if((ch == 'a'  || ch == 'A') ||( ch == 'e' || ch == 'E') || (ch == 'i' || ch == 'I') || (ch == 'o' || ch == 'O') ||( ch == 'u' || ch == 'U'))
+			{
+				count++;
+			}
+			
+		}
+		System.out.println("Number of Vowels are : "+count);
+	}
+	
+	
+	///////////////////////////////////////////////////////////////////////
+	
+
+	public static void main(String[] args) {
+		
+		CountVowels obj = new CountVowels();
+		
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("Input the String : ");
+		
+		String str = s.next();
+		
+		obj.vowels(str);
+
+	}
+
+}
