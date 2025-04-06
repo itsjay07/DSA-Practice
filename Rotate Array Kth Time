@@ -1,0 +1,31 @@
+package com.dsa;
+
+import java.util.Arrays;
+
+public class RotateArrayKthTime {
+
+	public static void main(String[] args) {
+		
+		int[] arr = {1,2,3,4,5};
+		
+		System.out.println("Before : "+Arrays.toString(arr));
+		
+		int n = arr.length;
+		
+		int k = 2;
+		
+		for(int i = 0; i < k; i++) //iterate till kth time
+		{
+			int temp = arr[0]; // to store 1st element 
+			
+			for(int j = 1; j < n; j++)
+			{
+				arr[j-1] = arr[j];
+			}
+			arr[n-1] = temp; // 1st element kept at last index
+		}
+		
+		System.out.println("After : "+Arrays.toString(arr));
+	}
+
+}
