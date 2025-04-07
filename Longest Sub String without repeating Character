@@ -1,0 +1,47 @@
+package com.dsa;
+
+public class LongestSubString {
+
+	public static void main(String[] args) 
+	{
+		String str = "abcabcbb";
+		
+		int[] arr = new int[256];
+		
+		int i = 0; // starts current sub string
+		
+		int j = 0; //end current sub string
+		
+		int maxLength = 0; 
+		
+		
+		while(j < str.length())
+		{
+			char ch = str.charAt(j); // j is convert in character array 
+			
+			//to collect non repeating char
+			if(arr[ch] == 0) // if char is not repeated before then 
+			{
+				arr[ch] = 1; // it will store unique char count in arr
+				
+				int length = j - i + 1; 
+				
+				if(length > maxLength)
+				{
+					maxLength = length; 
+				}
+				  j++;		
+			}
+			else
+			{
+				arr[str.charAt(i)] = 0; //if char is repeated then it set to 0 then move i++ continue
+				i++;
+			}
+			
+		}
+		
+		System.out.println("Longest length without repeating character is : "+maxLength);
+
+	}
+
+}
