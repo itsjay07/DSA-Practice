@@ -1,0 +1,33 @@
+package com.dsa;
+
+public class CountVowelsAndConsonats {
+
+	public static void main(String[] args) {
+		
+		String str = "abcdefgh";
+		
+		int vowels = 0;
+		
+		int consonants = 0;
+		
+		for(int i = 0; i < str.length(); i++)
+		{
+			char ch = str.charAt(i);
+			
+			if(ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U')
+			{
+				vowels++;
+			}
+			else
+			{
+				consonants++;
+			}
+		}
+		
+		System.out.println("Total Vowels is : "+vowels );
+		
+		System.out.println("Total consonants is : "+consonants);
+
+	}
+
+}
