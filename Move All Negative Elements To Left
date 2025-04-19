@@ -1,0 +1,73 @@
+package com.dsa;
+
+import java.util.Scanner;
+
+public class MoveAllNegativeEleToLeft {
+
+	public static void moveAllNegativesToLeft(int[] arr)
+	{
+		int[] temp = new int[arr.length]; //take same size to temp to store final Op
+		
+		int count = 0;
+		
+		for(int i = 0; i < arr.length; i++)
+		{
+		    if(arr[i] < 0) // add all negative first
+		   {
+			temp[count++]= arr[i];
+			
+		   }
+		}
+		    
+		    ////////////////////////////////
+		    
+		    for(int i = 0; i < arr.length ; i++)
+		    {
+		    if(arr[i] >= 0) //adds all positive then
+		    {
+		    	temp[count++] = arr[i];
+		    }
+		    
+		    }
+		    
+		    ///////////////////////////////////
+		    
+		    for(int i = 0; i < arr.length;i++)
+		    {
+		    	arr[i] = temp[i]; //store back to arr 
+		    }
+		    
+		
+	}
+	
+	
+	
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Total Elements you want :");
+		
+		int input = sc.nextInt();
+		
+		int []arr = new int[input]; //created array to take input
+		
+		
+		System.out.println("Now Enter the "+input+" Elements :");
+		
+		for(int i = 0; i < arr.length;i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+			
+		moveAllNegativesToLeft(arr); //function call
+		
+		for(int num : arr)
+		{
+			System.out.print(" "+num);
+			
+		}
+		
+		sc.close();
+	}
+
+}
