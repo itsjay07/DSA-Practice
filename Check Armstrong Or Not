@@ -1,0 +1,55 @@
+package com.dsa;
+
+import java.util.Scanner;
+
+public class CheckArmstrongOrNot {
+
+	public static boolean isArmstrong(String str)
+	{
+		int num =Integer.parseInt(str); //convert string to int
+		
+		int sum = 0;
+		
+		for(int i = 0; i < str.length();i++)
+		{
+			int digit = str.charAt(i) - '0'; //convert char to int
+		
+			
+            int power = 1;
+			for(int j = 1; j <= str.length();j++)
+			{
+				power = power * digit;
+			}
+			
+			sum = sum + power ; 
+		}
+		
+		return sum == num;
+	}
+	
+	
+	
+	
+	
+	
+	///////////////////////////////////////
+	public static void main(String[] args) 
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the Input : ");
+		
+		String input = sc.next();
+		
+		if(isArmstrong(input))
+		{
+			System.out.println("Armstrong Number :"+input);
+		}
+		else
+		{
+			System.out.println("Not Armstrong Number :"+input);
+		}
+		sc.close();
+	}
+}
