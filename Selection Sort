@@ -1,0 +1,67 @@
+package com.sort;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SelectionSort {
+
+	
+	public static void selectionSort(int[] arr, int n)
+	{
+		boolean isSwap = true; // suppose array is initially unsorted so then only swap will perform
+		
+		for(int i = 0; i < n; i++)
+		{
+			int smallestIndex = i; //starting of unsorted array
+			
+			for(int j = i + 1; j < n ; j++)
+			{
+				if(arr[j] < arr[smallestIndex])
+				{
+					smallestIndex = j;
+					
+					//swap if is needed
+					if(smallestIndex != i)
+					{
+					int temp = arr[i];
+					arr[i] = arr[smallestIndex];
+					arr[smallestIndex] = temp;
+					
+					isSwap = false;
+					}
+				}
+			}
+	
+		}
+		if (isSwap) 
+		{
+			System.out.println("Array is already sorted.");
+		}
+		
+	}
+	
+	
+	
+	public static void main(String[] args) 
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter total elements for sorting : ");
+		
+		int n = sc.nextInt();
+		
+		int[] arr = new int[n];
+		
+		for(int i = 0; i < n ; i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+		
+		
+		selectionSort(arr,n);
+		
+		System.out.println("Sorted Array is :"+Arrays.toString(arr));
+	}
+
+}
