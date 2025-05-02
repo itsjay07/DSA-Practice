@@ -1,0 +1,59 @@
+package com.jay;
+
+import java.util.Scanner;
+
+public class findmissingnum {
+	
+	public static int missingNum(int[] arr,int n)
+	{
+		for(int i = 1 ; i < n; i++)
+		{
+			boolean found = false;
+			
+			for(int j = 0 ; j < arr.length; j++)
+			{
+				if(arr[j] == i)
+				{
+					found = true;
+					break;
+				}			
+			}
+			
+			if(!found)
+			{
+				return i;
+			}
+			
+		}
+		
+		return -1;
+		
+		
+	}
+	
+	
+
+	public static void main(String[] args) {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("How many elements it is : ");
+		
+		int n = sc.nextInt();
+		
+		int[] arr = new int[n-1];
+		
+		System.out.println("Enter "+(n-1)+" elements now :");
+		
+		for(int i = 0; i < arr.length; i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+		
+		int missing = missingNum(arr, n);
+		
+		System.out.println("Missing Number is :"+missing);
+	}
+
+}
