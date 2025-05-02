@@ -1,0 +1,51 @@
+package com.jay;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArrayRev {
+
+	
+	public static void reverseArr(int[] arr, int n)
+	{
+		int i = 0;
+		int j = n - 1;
+		
+		while(i < j)
+		{
+			int temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+			
+			i++;
+			j--;
+		}
+	}
+
+	public static void main(String[] args) 
+	{
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter how many elements you want to reverse :");
+		
+		int n = sc.nextInt();
+		
+		System.out.println("Enter " +n+ " elements in array : ");
+		
+		int[] arr = new int[n];
+		
+		for(int i = 0 ; i < arr.length; i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+		
+		System.out.println("Before : "+Arrays.toString(arr));
+
+		reverseArr(arr, n);
+		
+		System.out.println("After "+Arrays.toString(arr));
+
+	}
+
+}
