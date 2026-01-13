@@ -1,0 +1,30 @@
+package com.dsa;
+
+public class CountEvenOddNums {
+	
+	public static void main(String[] args) {
+		
+		
+		int[] arr = {2,1,4,5,3,7,8,13,46,75,792,35};
+		
+		int EvenNums = 0;
+		
+		int OddNums = 0;
+		
+		for(int i = 0; i < arr.length; i++)
+		{
+			if(arr[i] % 2 == 0)
+			{
+				EvenNums++;
+			}
+			else
+			{
+				OddNums++;
+			}
+		}
+		
+		System.out.println("Total Even Numbers are :"+EvenNums);
+		System.out.println("Total Odd Numbers are : "+OddNums);
+	}
+
+}
