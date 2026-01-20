@@ -1,0 +1,29 @@
+package com.dsa;
+
+public class EvenDigitSum {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Numbers between 1 and 100 whose digit sum is even : ");
+		
+		for(int i = 1; i <= 100; i++)
+		{
+			int num = i;
+			int sum = 0;
+			
+			while(num > 0)
+			{
+				sum = sum + (num % 10);
+				num = num / 10;
+			}
+			
+			//to check if digit sum is even
+			
+			if(sum % 2 == 0)
+			{
+				System.out.print(i+" ");
+			}
+		}
+		
+	}
+}
