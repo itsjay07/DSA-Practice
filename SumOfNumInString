@@ -1,0 +1,31 @@
+package com.dsa;
+
+public class SumOfNumInString {
+
+	public static void main(String[] args) {
+		
+		String str = "d34jdf43";
+		
+		int num = 0;
+		int sum = 0;
+		
+		for(int i = 0; i < str.length(); i++)
+		{
+			char ch = str.charAt(i);
+			
+			if(ch >= '0' && ch <= '9')
+			{
+				num = num * 10 + (ch - '0');
+			}
+			else{
+				num = num + sum;
+				num = 0; // non digit is converted to digit so that why i make it 0 to do not mismatch the original sum in string
+			}
+		}
+			
+		sum = sum + num;
+		
+		System.out.println("The Sum of Obtain Digits Are : "+sum);
+	}
+
+}
