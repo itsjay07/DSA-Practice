@@ -1,0 +1,28 @@
+package com.dsa;
+
+public class ReverseSentence {
+
+	public static void main(String[] args) 
+	{
+		 String s = "This is Laptop", word = "", res = "";
+		 
+	        for (int i = s.length() - 1; i >= 0; i--) 
+	        {
+	            char ch = s.charAt(i);
+	            if (ch != ' ')
+	            	{
+	            	word = ch + word;
+	            	}
+	            else 
+	            {
+	                res = res + word + " ";
+	                word = "";
+	            }
+	        }
+	        res = res + word;
+	        System.out.println(res);
+	    }
+
+	}
+
+
