@@ -1,0 +1,50 @@
+package com.dsa;
+
+import java.util.Scanner;
+
+public class CheckTwoArraysIsEqual {
+
+	public static void main(String[] args) 
+	{
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter the size of arrays : ");
+		int size = sc.nextInt();
+
+		int[] arr1 = new int[size];
+		int[] arr2 = new int[size];
+
+		System.out.println("Enter the elements in 1st Array :");
+		for (int i = 0; i < arr1.length; i++) 
+		{
+			arr1[i] = sc.nextInt();
+		}
+
+		System.out.println("Enter the elements in 2nd Array :");
+		for (int i = 0; i < arr2.length; i++) 
+		{
+			arr2[i] = sc.nextInt();
+		}
+
+		boolean isEqual = true;
+
+		for (int i = 0; i < size; i++) 
+		{
+			if (arr1[i] != arr2[i]) {
+				isEqual = false;
+				break;
+			}
+		}
+
+		if (isEqual) 
+		{
+			System.out.println("Both Arrays Are Equal :)");
+		} 
+		else 
+		{
+			System.out.println("Both Arrays Are Not Equals :(");
+		}
+	}
+
+}
