@@ -1,0 +1,76 @@
+package com.dsa;
+
+public class FirstAndLastWordInUpperCase {
+
+	public static void main(String[] args) {
+
+		String str = "hello from pune city";
+
+		int n = str.length();
+
+		String word = "";
+
+		String first = "";
+
+		String last = "";
+
+		int spaceCount = 0;
+
+		// count spaces to know last word
+
+		for (int i = 0; i < n; i++) 
+		{
+			if (str.charAt(i) == ' ') 
+			{
+				spaceCount++;
+			}
+			
+		}
+		
+		int count = 0;
+		String result = "";
+		
+		for(int i = 0; i < n ; i++)
+		{
+			char ch = str.charAt(i);
+			
+			if(ch != ' ')
+			{
+				word = word + ch; //at each index & each word is set after removing a space in string
+			}
+			else
+			{
+				if(count == 0)
+				{
+					word = toUpper(word); //1st word
+					result = result + word;
+					word = "";
+					count++;
+				}
+				
+				
+			}
+			
+			//handle last word
+			if(count == spaceCount)
+			{
+				word = toUpper(word);
+			}
+			
+			result = result + word;//add last word
+			
+			System.out.println(result);
+		}
+		
+		}
+		
+		static String toUpper(String s) {
+	        if (s.length() == 0) return s;
+	        char first = s.charAt(0);
+	        if (first >= 'a' && first <= 'z')
+	            first = (char)(first - 32);
+	        return first + s.substring(1);
+
+	}
+
+}
