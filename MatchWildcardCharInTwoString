@@ -1,0 +1,55 @@
+package com.dsa;
+
+import java.util.Scanner;
+
+public class MatchWildcardCharInTwoString {
+	
+	public static boolean isMatch(String str1, String str2)
+	{
+		if(str1.length() != str2.length())
+		{
+			return false;
+		}
+		
+		
+		for(int i = 0 ; i < str1.length(); i++)
+		{
+			char ch1 = str1.charAt(i);
+			char ch2 = str2.charAt(i);
+			
+			if(ch2 != '?'&& ch1 != ch2)// if any char is != '?' or ch1 is != ch2 means in ch2 '?'(wildcard) must be in str2 to match both strings
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	
+		
+	
+////////////////////////////////////////////////
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner (System.in);
+		
+		System.out.println("Enter 1st Input : ");
+		
+		String str1 = sc.nextLine();
+		
+		System.out.println("Enter 2nd Input : ");
+		
+		String str2 = sc.nextLine();
+		
+		
+		if(isMatch(str1 , str2))
+		{
+			System.out.println("Its Match");
+		}
+		else
+		{
+			System.out.println("Not Match");
+		}
+		
+	}
+
+}
